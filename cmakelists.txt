@@ -1,0 +1,41 @@
+PROJECT ( hellocmake )
+
+cmake_minimum_required( VERSION 3.7 )
+ 
+#set the default path for built executables to the "bin" directory
+
+
+
+#set the default path for built libraries to the "lib" directory
+
+#set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+#set(PROJECT_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src)
+
+SET (PROJECT_ROOT "${PROJECT_SOURCE_DIR}")
+SET (PROJECT_SOURCE_DIR "${PROJECT_SOURCE_DIR}/src")
+SET (PROJECT_BINARY_DIR "${PROJECT_BINARY_DIR}/bin")
+set(EXECUTABLE_OUTPUT_PATH bin/${CMAKE_BUILD_TYPE})
+
+#ADD_SUBDIRECTORY( files )
+
+
+#Génération de la liste des fichiers sources
+
+file(
+
+        GLOB
+
+        source_files
+
+        src/*
+
+)
+
+
+
+
+ADD_EXECUTABLE (
+	my_exe 
+	${source_files}
+ )
