@@ -1,6 +1,8 @@
-PROJECT ( hellocmake )
+cmake_minimum_required( VERSION 3.8)
 
-cmake_minimum_required( VERSION 3.7 )
+PROJECT (hellocmake LANGUAGES CXX)
+
+#set_target_properties(hellocmake PROPERTIES LINKER_LANGUAGE CXX)
  
 #set the default path for built executables to the "bin" directory
 
@@ -13,29 +15,17 @@ cmake_minimum_required( VERSION 3.7 )
 #set(PROJECT_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/src)
 
 SET (PROJECT_ROOT "${PROJECT_SOURCE_DIR}")
-SET (PROJECT_SOURCE_DIR "${PROJECT_SOURCE_DIR}/src")
-SET (PROJECT_BINARY_DIR "${PROJECT_BINARY_DIR}/bin")
+#SET (PROJECT_SOURCE_DIR "${PROJECT_SOURCE_DIR}/src")
+#SET (PROJECT_BINARY_DIR "${PROJECT_BINARY_DIR}/bin")
 set(EXECUTABLE_OUTPUT_PATH bin/${CMAKE_BUILD_TYPE})
 
-#ADD_SUBDIRECTORY( files )
 
-
-#Génération de la liste des fichiers sources
-
-file(
-
-        GLOB
-
-        source_files
-
-        src/*
-
-)
+SET(BASE_PATH "../Base/C++" CACHE FILEPATH "Path to Base")
+ADD_SUBDIRECTORY(Base)
+SET(BASE_INCLUDE ${PROJECT_SOURCE_DIR}/Base/src)
+ADD_SUBDIRECTORY(Test)
 
 
 
 
-ADD_EXECUTABLE (
-	my_exe 
-	${source_files}
- )
+
