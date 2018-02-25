@@ -12,7 +12,7 @@
 // Link with Iphlpapi.lib
 #pragma comment(lib, "IPHLPAPI.lib")
 
-#include "abc.hpp"
+//#include "abc.hpp"
 
 /*namespace TestNozha
 {*/ 

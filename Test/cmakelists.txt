@@ -25,9 +25,10 @@ file(
 
 )
 
-ADD_EXECUTABLE (my_exe ${source_files} ${internal_source_files})
+ADD_EXECUTABLE (hello_cmake ${source_files} ${internal_source_files})
 
-target_include_directories(my_exe PUBLIC ${BASE_INCLUDE})
+target_include_directories(hello_cmake PUBLIC ${BASE_INCLUDE})
+
 SOURCE_GROUP("Src" FILES  ${source_files})
 SOURCE_GROUP("Src\\internal" FILES  ${internal_source_files})
 
